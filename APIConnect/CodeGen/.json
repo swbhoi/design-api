@@ -1,74 +1,77 @@
 {
-	"swagger": "2.0",
-	"info": {
-		"title": "Bank API",
-		"description": "Banking APIs",
-		"version": "1.0"
-	},
-	"host": "banking.com:8081",
-	"basePath": "/apis",
-	"schemes": [
-		"http"
-	],
-	"consumes": [
-		"application/json"
-	],
-	"produces": [
-		"application/json"
-	],
-	"paths": {
-		"/account": {
-			"get": {
-				"tags": [
-					"AccountDetail"
-				],
-				"summary": "Get Account Detail",
-				"description": "Getting the account detail for an account",
-				"operationId": "getAccount",
-				"consumes": [
-					"application/json"
-				],
-				"produces": [
-					"application/json"
-				],
-				"parameters": [
-					{
-						"name": "account_id",
-						"in": "query",
-						"description": "account id",
-						"required": true,
-						"type": "string",
-						"format": "String"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "Success",
-						"schema": {
-							"type": "string"
-						},
-						"headers": {
-							"test": {
-								"description": "test header",
-								"type": "string",
-								"format": "String"
-							}
-						}
-					}
-				}
-			}
-		}
-	},
-	"definitions": {
-		"Account": {
-			"type": "object",
-			"properties": {
-				"IBAN": {
-					"type": "string",
-					"format": "String",
-					"description": "IBAN"
-				}
-			}
-		}
-	}
+    "swagger": "2.0",
+    "info": {
+        "title": "Bank API",
+        "description": "Banking APIs",
+        "version": "1.0"
+    },
+    "host": "52.77.82.11:8082",
+    "basePath": "/apis",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/account": {
+            "get": {
+                "tags": [
+                    "AccountDetail"
+                ],
+                "summary": "Account Details",
+                "description": "Account Details",
+                "operationId": "getAccountDetail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "query",
+                        "description": "account id",
+                        "required": true,
+                        "type": "string",
+                        "format": "String"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success Response",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Account": {
+            "type": "object",
+            "properties": {
+                "IBAN": {
+                    "type": "string",
+                    "format": "string",
+                    "description": "IBAN Number"
+                },
+                "acc_number": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "account number"
+                },
+                "bank_id": {
+                    "type": "string",
+                    "format": "string",
+                    "description": "Bank ID"
+                }
+            }
+        }
+    }
 }
