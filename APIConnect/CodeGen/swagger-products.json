@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Open Bank Project API",
+        "description": "An Open Source API for Banks. (c) TESOBE Ltd. 2011 - 2016. Licensed under the AGPL and commercial licences.",
+        "contact": {
+            "name": "TESOBE Ltd. / Open Bank Project",
+            "url": "https://openbankproject.com"
+        },
+        "version": "v2.2.0"
+    },
+    "host": "apisandbox.openbankproject.com",
+    "basePath": "/obp/v2.2.0",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/banks/BANK_ID/products": {
+            "get": {
+                "tags": [
+                    "2_1_0"
+                ],
+                "summary": "Get Bank Products",
+                "description": "<p>Returns information about the financial products offered by a bank specified by BANK_ID including:</p><ul>  <li>Name</li>  <li>Code</li>  <li>Category</li>  <li>Family</li>  <li>Super Family</li>  <li>More info URL</li>  <li>Description</li>  <li>Terms and Conditions</li>  <li>License the data under this endpoint is released under Authentication is Optional</li></ul>",
+                "operationId": "getProducts",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/banks/BANK_ID/products/PRODUCT_CODE": {
+            "get": {
+                "tags": [
+                    "2_1_0"
+                ],
+                "summary": "Get Bank Product",
+                "description": "<p>Returns information about the financial products offered by a bank specified by BANK_ID and PRODUCT_CODE including:</p><ul>  <li>Name</li>  <li>Code</li>  <li>Category</li>  <li>Family</li>  <li>Super Family</li>  <li>More info URL</li>  <li>Description</li>  <li>Terms and Conditions</li>  <li>License the data under this endpoint is released under Authentication is Optional</li></ul>",
+                "operationId": "2_1_0-getProduct",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "type": "object",
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
