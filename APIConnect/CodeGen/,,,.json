@@ -1,6 +1,31 @@
 {
-	"swagger": "lbbjk",
+	"swagger": "bjb",
 	"info": {
-		"title": "nklnkl"
+		"title": "bhhj",
+		"description": "bjkbjkb",
+		"termsOfService": "bjbjk",
+		"contact": {
+			"name": "bjkbk",
+			"url": "jknjk"
+		}
+	},
+	"host": "bnb:8080",
+	"basePath": "/knkl",
+	"schemes": [
+		"http"
+	],
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {
+		"jkbjk": {
+			"type": "array",
+			"format": "nn,",
+			"items": {
+				"type": "integer",
+				"format": "m,nm,",
+				"$ref": "n,n,"
+			}
+		}
 	}
 }
