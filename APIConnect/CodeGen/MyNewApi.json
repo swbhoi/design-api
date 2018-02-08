@@ -1,0 +1,30 @@
+{
+	"info": {
+		"title": "CheckApp",
+		"description": "Checking the App",
+		"contact": {
+			"name": "Priya",
+			"url": "\\priya",
+			"email": "dhanapriyas010@gmail.com"
+		}
+	},
+	"host": "52.77.82.11:8080",
+	"basePath": "/\\priyaApp",
+	"schemes": [
+		"http"
+	],
+	"consumes": [
+		"application/json",
+		"application/xml",
+		"text/plain"
+	],
+	"produces": [
+		"application/json"
+	],
+	"definitions": {
+		"name": {
+			"type": "string",
+			"format": "priya"
+		}
+	}
+}
