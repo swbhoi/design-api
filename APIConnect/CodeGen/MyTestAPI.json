@@ -1,0 +1,132 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Banking API",
+    "version": "1.0.0",
+    "title": "BankAPIs",
+    "contact": {},
+    "license": {
+      "name": "Banking API",
+      "url": "www.bankingapis.com"
+    }
+  },
+  "host": "bigbank.com:80",
+  "basePath": "/apis",
+  "tags": [
+    {
+      "name": "AccountDetails",
+      "description": "Account Operations"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/account/{accountNumber}": {
+      "get": {
+        "tags": [
+          "AccountDetails"
+        ],
+        "summary": "Account Details",
+        "description": "Account Detail's",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Search Success",
+            "schema": {
+              "$ref": "#/definitions/Account"
+            }
+          },
+          "302": {
+            "description": "Acc not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Account": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID"
+        },
+        "label": {
+          "type": "string",
+          "description": "label"
+        },
+        "acc_number": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Account number"
+        },
+        "owners": {
+          "type": "array",
+          "description": "owners",
+          "items": {
+            "$ref": "#/definitions/Owners"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "type"
+        },
+        "balance": {
+          "description": "balance",
+          "$ref": "#/definitions/balance"
+        },
+        "IBAN": {
+          "type": "string",
+          "description": "IBAN"
+        },
+        "swift_bic": {
+          "type": "string",
+          "description": "swift_bic"
+        },
+        "bank_id": {
+          "type": "string",
+          "description": "bank_id"
+        }
+      },
+      "description": "Account Details"
+    },
+    "Owners": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "description": "provider"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "display name"
+        },
+        "id": {
+          "type": "string",
+          "description": "id"
+        }
+      },
+      "description": "Account owners"
+    },
+    "Balance": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "currency"
+        },
+        "amount": {
+          "type": "number",
+          "format": "float",
+          "description": "amount"
+        }
+      },
+      "description": "balance"
+    }
+  }
+}
